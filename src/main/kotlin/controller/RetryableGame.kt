@@ -1,5 +1,8 @@
-package domain
+package controller
 
+import domain.Constant
+import domain.GameString
+import domain.WordleGame
 import view.InputView
 import view.ResultView
 

@@ -1,4 +1,4 @@
-import domain.RetryableGame
+import controller.RetryableGame
 import domain.Start
 import domain.WordleGame
 import view.InputView
