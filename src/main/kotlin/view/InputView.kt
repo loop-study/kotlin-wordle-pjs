@@ -6,7 +6,7 @@ class InputView {
 
     fun getInput(): GameString {
         while(true) {
-            val inputWord = readLine()!!.trim()
+            val inputWord = readln().trim()
             try {
                 return GameString(inputWord)
             } catch (exception: Exception) {

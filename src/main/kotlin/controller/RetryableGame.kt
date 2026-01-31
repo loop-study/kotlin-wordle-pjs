@@ -6,18 +6,15 @@ import domain.WordleGame
 import view.InputView
 import view.ResultView
 
-class RetryableGame(val wordleGame: WordleGame, val resultView: ResultView, val input: InputView) {
+class RetryableGame(val wordleGame: WordleGame, val resultView: ResultView, val inputView: InputView) {
     fun run(answer: GameString) {
-        var currentCount = 0
-        while (currentCount < Constant.MAX_GAME_TRY_COUNT) {
-            currentCount++
-            val input = input.getInput()
-
-            val gameResult = wordleGame.logic(input, answer)
+        repeat (Constant.MAX_GAME_TRY_COUNT) {
+            val inputWord = inputView.getInput()
+            val gameResult = wordleGame.logic(inputWord, answer)
 
             resultView.printResult(gameResult)
             if (gameResult.isSuccess) {
-                break
+                return
             }
         }
     }
