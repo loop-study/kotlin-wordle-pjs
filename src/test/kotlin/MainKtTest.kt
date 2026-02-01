@@ -8,16 +8,16 @@ import org.junit.jupiter.api.Test
 class MainKtTest {
 
     @Test
-    fun 정답을_맞추면_모두_초록색이다() {
+    fun `정답을 맞추면 모두 초록색이다()`() {
         val input = GameString("under")
         val answer = GameString("under")
         val game = WordleGame()
         val expected = listOf(
-            Color.GREEN.colorBox,
-            Color.GREEN.colorBox,
-            Color.GREEN.colorBox,
-            Color.GREEN.colorBox,
-            Color.GREEN.colorBox
+            Color.GREEN,
+            Color.GREEN,
+            Color.GREEN,
+            Color.GREEN,
+            Color.GREEN
         )
 
         val result = game.logic(input, answer).emojiArray
@@ -26,16 +26,16 @@ class MainKtTest {
     }
 
     @Test
-    fun 입력문자열이_answer의_글자에_포함되어있으면_yellow() {
+    fun `입력문자열이 answer의 글자에 포함되어있으면 yellow`() {
         val input = GameString("uooon")
         val answer = GameString("under")
         val game = WordleGame()
         val expected = listOf(
-            Color.GREEN.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox,
-            Color.YELLOW.colorBox
+            Color.GREEN,
+            Color.GREY,
+            Color.GREY,
+            Color.GREY,
+            Color.YELLOW
         )
 
         val result = game.logic(input, answer).emojiArray
@@ -44,16 +44,16 @@ class MainKtTest {
     }
 
     @Test
-    fun 정답글자를_중복으로_입력할_경우_grey() {
+    fun `정답글자를 중복으로 입력할 경우 grey`() {
         val input = GameString("uuooo")
         val answer = GameString("under")
         val game = WordleGame()
         val expected = listOf(
-            Color.GREEN.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox
+            Color.GREEN,
+            Color.GREY,
+            Color.GREY,
+            Color.GREY,
+            Color.GREY
         )
 
         val result = game.logic(input, answer).emojiArray
@@ -62,16 +62,16 @@ class MainKtTest {
     }
 
     @Test
-    fun 오류케이스_추가() {
+    fun `오류케이스 추가`() {
         val input = GameString("uuuuo")
         val answer = GameString("undeu")
         val game = WordleGame()
         val expected = listOf(
-            Color.GREEN.colorBox,
-            Color.YELLOW.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox
+            Color.GREEN,
+            Color.YELLOW,
+            Color.GREY,
+            Color.GREY,
+            Color.GREY
         )
 
         val result = game.logic(input, answer).emojiArray
@@ -84,11 +84,11 @@ class MainKtTest {
         val answer = GameString("unueu")
         val game = WordleGame()
         val expected = listOf(
-            Color.GREY.colorBox,
-            Color.YELLOW.colorBox,
-            Color.GREY.colorBox,
-            Color.YELLOW.colorBox,
-            Color.GREY.colorBox
+            Color.GREY,
+            Color.YELLOW,
+            Color.GREY,
+            Color.YELLOW,
+            Color.GREY
         )
 
         val result = game.logic(input, answer).emojiArray
@@ -101,11 +101,11 @@ class MainKtTest {
         val answer = GameString("ououo")
         val game = WordleGame()
         val expected = listOf(
-            Color.YELLOW.colorBox,
-            Color.GREY.colorBox,
-            Color.YELLOW.colorBox,
-            Color.GREY.colorBox,
-            Color.GREY.colorBox
+            Color.YELLOW,
+            Color.GREY,
+            Color.YELLOW,
+            Color.GREY,
+            Color.GREY
         )
 
         val result = game.logic(input, answer).emojiArray
@@ -118,11 +118,11 @@ class MainKtTest {
         val answer = GameString("badec")
         val game = WordleGame()
         val expected = listOf(
-            Color.YELLOW.colorBox,
-            Color.YELLOW.colorBox,
-            Color.YELLOW.colorBox,
-            Color.YELLOW.colorBox,
-            Color.YELLOW.colorBox
+            Color.YELLOW,
+            Color.YELLOW,
+            Color.YELLOW,
+            Color.YELLOW,
+            Color.YELLOW
         )
 
         val result = game.logic(input, answer).emojiArray

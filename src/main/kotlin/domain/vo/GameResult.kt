@@ -1,6 +1,8 @@
 package domain.vo
 
+import domain.Color
+
 data class GameResult(
-    val emojiArray: List<String>,
+    val emojiArray: List<Color>,
     val isSuccess: Boolean,
 )
