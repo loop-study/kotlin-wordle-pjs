@@ -62,7 +62,7 @@ class MainKtTest {
     }
 
     @Test
-    fun `오류케이스 추가`() {
+    fun `정답 글자가 중복일 경우, 정답 개수만큼 Green, Yellow`() {
         val input = GameString("uuuuo")
         val answer = GameString("undeu")
         val game = WordleGame()
@@ -79,7 +79,7 @@ class MainKtTest {
     }
 
     @Test
-    fun `반복문 break 오류케이스 추가`() {
+    fun `정답 글자 수만큼 Yellow 추가 확인`() {
         val input = GameString("ououo")
         val answer = GameString("unueu")
         val game = WordleGame()
@@ -96,7 +96,7 @@ class MainKtTest {
     }
 
     @Test
-    fun `반복문 break 오류케이스 추가2`() {
+    fun `정답 글자 수만큼 Yellow 추가 확인2`() {
         val input = GameString("unueu")
         val answer = GameString("ououo")
         val game = WordleGame()
@@ -113,7 +113,7 @@ class MainKtTest {
     }
 
     @Test
-    fun `모두 노란색`() {
+    fun `글자 모두 정답에 있는데 순서가 다르면 노란색`() {
         val input = GameString("abcde")
         val answer = GameString("badec")
         val game = WordleGame()
